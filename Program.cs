@@ -6,48 +6,74 @@ namespace Brief_calculatrice
     {
         static void Main(string[] args)
         {
-            int nombre1;
-            int nombre2;
+          
+           
+            double nombre1;
+            double nombre2;
             int choix;
-            fonction.Affichage();
-            choix = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            Console.Write("Choissisez le premier nombre : ");
-            nombre1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(new string('-', 30));
-            Console.Write("Choissisez le second nombre : ");
-            nombre2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(new string('-', 30));
+            while (true) {
+              
+                Console.BackgroundColor = ConsoleColor.Blue; // fond en bleu
+                fonction.Affichage(); // j'appelle ma méthode affichage
+            choix = Convert.ToInt32(Console.ReadLine()); // le nombre pour le menu
+            if (choix == 5)
+            {
+                    Console.WriteLine("Le programme est finit");
+                    break; // permet d'arreter la calculatrice
 
-            switch (choix)
+                } else if (choix > 4) {
+
+                    Console.WriteLine(new string('-', 30));
+                    Console.ForegroundColor = ConsoleColor.Red; // écriture en rouge
+                    Console.WriteLine("Fallait saisir un chiffre entre 1 et 4");// si le chiffre n'est pas entre 1 et 4
+                    Console.ResetColor();
+                 
+
+                }
+
+            else
                 {
-                    case 1:
 
-                        Console.Write("le produit est : ");
-                        fonction.Multiplication(nombre1, nombre2);
-                        break;
+                    Console.Clear(); // je nettoie la console
+                    Console.Write("Choissisez le premier nombre : ");
+                    nombre1 = Double.Parse(Console.ReadLine()); // 1er nombre
+                    Console.WriteLine(new string('-', 30)); // visuel avec des tirets
+                    Console.Write("Choissisez le second nombre : ");
+                    nombre2 = Convert.ToDouble(Console.ReadLine()); // 2eme nombre
+                    Console.WriteLine(new string('-', 30));
 
-                    case 2:
-                        Console.Write("la somme est : ");
-                        fonction.Addition(nombre1, nombre2);
-                        break;
+                    switch (choix)
+                    {
+                        case 1:
 
-                    case 3:
+                            Console.Write("le produit est : ");
+                            fonction.Multiplication(nombre1, nombre2); // j'appelle ma méthode
+                            break;
 
-                        Console.Write("le quotient est : ");
-                        fonction.Division(nombre1, nombre2);
-                        break;
+                        case 2:
+                            Console.Write("la somme est : ");
+                            fonction.Addition(nombre1, nombre2); // j'appelle ma méthode
+                            break;
 
-                    case 4:
-                        Console.Write("le différence est : ");
-                        fonction.Soustraction(nombre1, nombre2);
-                        break;
+                        case 3:
+
+                            Console.Write("le quotient est : ");
+                            fonction.Division(nombre1, nombre2); // j'appelle ma méthode
+                            break;
+
+                        case 4:
+                            Console.Write("le différence est : ");
+                            fonction.Soustraction(nombre1, nombre2); // j'appelle ma méthode
+                            break;
+
+                    }
 
                 }
             }
         }
-    
-    };
+
+    }
+};
 
 
 
