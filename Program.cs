@@ -6,26 +6,26 @@ namespace Brief_calculatrice
     {
         static void Main(string[] args)
         {
-          
-           
             double nombre1;
             double nombre2;
             int choix;
             while (true) {
-              
+                
                 Console.BackgroundColor = ConsoleColor.Blue; // fond en bleu
                 fonction.Affichage(); // j'appelle ma méthode affichage
             choix = Convert.ToInt32(Console.ReadLine()); // le nombre pour le menu
             if (choix == 5)
             {
+                    Console.WriteLine();
                     Console.WriteLine("Le programme est finit");
                     break; // permet d'arreter la calculatrice
 
-                } else if (choix > 4) {
+                } else if (choix <= 0 || choix > 4) {
 
                     Console.WriteLine(new string('-', 30));
                     Console.ForegroundColor = ConsoleColor.Red; // écriture en rouge
-                    Console.WriteLine("Fallait saisir un chiffre entre 1 et 4");// si le chiffre n'est pas entre 1 et 4
+                    Console.Clear();
+                    Console.WriteLine("Fallait saisir un chiffre entre 1 et 4 !!");// si le chiffre n'est pas entre 1 et 4
                     Console.ResetColor();
                  
 
@@ -33,7 +33,6 @@ namespace Brief_calculatrice
 
             else
                 {
-
                     Console.Clear(); // je nettoie la console
                     Console.Write("Choissisez le premier nombre : ");
                     nombre1 = Double.Parse(Console.ReadLine()); // 1er nombre
@@ -41,11 +40,11 @@ namespace Brief_calculatrice
                     Console.Write("Choissisez le second nombre : ");
                     nombre2 = Convert.ToDouble(Console.ReadLine()); // 2eme nombre
                     Console.WriteLine(new string('-', 30));
+                    Console.Clear();
 
                     switch (choix)
                     {
                         case 1:
-
                             Console.Write("le produit est : ");
                             fonction.Multiplication(nombre1, nombre2); // j'appelle ma méthode
                             break;
@@ -62,10 +61,9 @@ namespace Brief_calculatrice
                             break;
 
                         case 4:
-                            Console.Write("le différence est : ");
+                            Console.Write("la différence est : ");
                             fonction.Soustraction(nombre1, nombre2); // j'appelle ma méthode
                             break;
-
                     }
 
                 }

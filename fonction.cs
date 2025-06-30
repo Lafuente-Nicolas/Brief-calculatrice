@@ -19,7 +19,7 @@ namespace Brief_calculatrice
             Console.WriteLine("4 - Soustraction");
             Console.WriteLine("5 - Arrêter la calculatrice");
             Console.WriteLine(new string('-', 30));
-            Console.Write("Choissisez une opération : ");
+            Console.Write("Choisissez une opération : ");
             
         }
         public static void Multiplication(double nombre1, double nombre2) // méthode pour multiplier
@@ -46,7 +46,7 @@ namespace Brief_calculatrice
         public static void Soustraction(double nombre1, double nombre2) // méthode pour la soustraction
         {
             double soustraction = nombre1 - nombre2;
-            Console.WriteLine(soustraction);
+           Console.WriteLine(soustraction);
         }
     }
 };
